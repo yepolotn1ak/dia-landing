@@ -1,0 +1,147 @@
+.header {
+  border-radius: 0 0 $border-radius $border-radius;
+  width: 100%;
+  background-color: $header-bg-color;
+  --little-nav-height: 52px;
+  --big-nav-height: 124px;
+
+  &__content {
+    @include onSmallDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__content-block {
+    @include onSmallDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+
+    &--container {
+      position: absolute;
+      bottom: 0;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+      padding-bottom: 24px;
+
+      @include onTablet {
+        padding-bottom: 32px;
+      }
+
+      @include onSmallDesktop {
+        flex-direction: row;
+        gap: 24px;
+        padding: 0 78px 48px;
+      }
+
+      @include onDesktop {
+        padding: 0 48px 48px;
+      }
+    }
+
+    &--photo {
+      height: 390px;
+      min-width: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: $border-radius;
+
+      @include onSmallDesktop {
+        height: 680px;
+        border-radius: $border-radius 0;
+      }
+
+      &:nth-child(1),
+      &:nth-child(5) {
+        background-image: url(../images/slider/slider-img-4.png);
+      }
+
+      &:nth-child(2),
+      &:nth-child(6) {
+        background-image: url(../images/slider/slider-img-1.png);
+      }
+
+      &:nth-child(3) {
+        background-image: url(../images/slider/slider-img-2.jpg);
+      }
+
+      &:nth-child(4) {
+        background-image: url(../images/slider/slider-img-3.png);
+      }
+    }
+
+    &--button-block {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &--button-left,
+    &--button-right {
+      width: 18px;
+      height: 18px;
+      background-color: white;
+      border-radius: 50%;
+      padding: 7px;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+
+      @include hover(background-color, #2060f6);
+    }
+
+    &--button-left {
+      background-image: url(../images/slider/slider-button-left.svg);
+    }
+
+    &--button-right {
+      background-image: url(../images/slider/slider-button-right.svg);
+    }
+
+    &--info-block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      color: white;
+    }
+
+    &--info-title {
+      font-family: "Poppins", sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 19.5px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    &--info-description {
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 19.6px;
+    }
+
+    @include onSmallDesktop {
+      min-height: 365px;
+      position: absolute;
+      height: 680px;
+      top: 124px;
+      left: 50%;
+      width: 50%;
+      border-radius: $border-radius 0;
+    }
+  }
+}

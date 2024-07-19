@@ -1,0 +1,9 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $header-bg-color;
+  overflow: auto;
+  padding-top: 20px;
+  top: 0;
+  z-index: 1;
+}
