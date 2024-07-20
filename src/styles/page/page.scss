@@ -12,15 +12,15 @@
     top: 0;
     right: 0;
     left: 0;
-    box-sizing: border-box;
-    position: fixed;
+    position: absolute;
     transition: all $durationTime;
-    opacity: 0;
     transform: translateX(-100%);
     pointer-events: none;
+    height: 100%;
+    background-color: $header-bg-color;
+    padding-top: 20px;
 
     &:target {
-      opacity: 1;
       transform: translateX(0);
       pointer-events: all;
     }

@@ -20,7 +20,7 @@ const nextSlide = () => {
     setTimeout(() => {
       currentSlide = 1;
       showSlide(currentSlide, false);
-    }, 500);
+    }, 300);
   }
 };
 
@@ -32,7 +32,7 @@ const prevSlide = () => {
     setTimeout(() => {
       currentSlide = slides.length - 2;
       showSlide(currentSlide, false);
-    }, 500);
+    }, 300);
   }
 };
 
